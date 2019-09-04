@@ -5,6 +5,8 @@ import io.netty.handler.codec.http.HttpConstants;
 import lombok.Data;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,6 +14,8 @@ import java.util.concurrent.ConcurrentHashMap;
 @Data
 @Slf4j
 @ToString(of = {"host", "port", "https", "version"})
+@Component
+@Scope("prototype")
 public class HttpMiddleware {
 
     private String host;

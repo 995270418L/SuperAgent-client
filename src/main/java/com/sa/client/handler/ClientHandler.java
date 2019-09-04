@@ -11,14 +11,20 @@ import io.netty.util.ReferenceCountUtil;
 import io.netty.util.concurrent.FutureListener;
 import io.netty.util.concurrent.Promise;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Slf4j
+@Component
+@Scope("prototype")
 public class ClientHandler extends ChannelInboundHandlerAdapter {
 
-    private HttpMiddleware httpMiddleware = new HttpMiddleware();
-
+    @Autowired
+    private HttpMiddleware httpMiddleware;
     private Channel remoteChannel;
 
     @Override
