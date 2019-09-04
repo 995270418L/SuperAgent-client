@@ -5,10 +5,8 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.socket.SocketChannel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Slf4j
@@ -21,6 +19,7 @@ public class InitChannelInitializer extends ChannelInitializer<SocketChannel>{
     @Override
     protected void initChannel(SocketChannel ch) {
         ChannelPipeline p = ch.pipeline();
+        log.info("current thread: {}", Thread.currentThread().getName());
         ClientHandler clientHandler = ctx.getBean(ClientHandler.class);
         log.info("client handler: {}", clientHandler);
         p.addLast(clientHandler);
