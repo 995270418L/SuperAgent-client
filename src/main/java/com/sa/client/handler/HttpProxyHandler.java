@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 @Component
 @Scope("prototype")
-public class ClientHandler extends ChannelInboundHandlerAdapter {
+public class HttpProxyHandler extends ChannelInboundHandlerAdapter {
 
     @Autowired
     private HttpMiddleware httpMiddleware;

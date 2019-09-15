@@ -20,7 +20,7 @@ public class ClientProxy {
                 .option(ChannelOption.SO_BACKLOG, 1024) // 连接数
                 .childOption(ChannelOption.SO_KEEPALIVE, false);
         try {
-            ChannelFuture f = bootstrap.bind(1080).sync();
+            ChannelFuture f = bootstrap.bind(1090).sync();
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
