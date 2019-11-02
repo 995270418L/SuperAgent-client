@@ -15,7 +15,7 @@
     </parent>
 
     <properties>
-        <netty.version>4.1.39.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <lombok.version>1.18.8</lombok.version>
         <logback.version>1.2.3</logback.version>
     </properties>
